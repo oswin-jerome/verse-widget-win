@@ -1,6 +1,6 @@
 {
   "name": "verse-widget",
-  "version": "v1.0.1",
+  "version": "v1.0.2",
   "description": "Verse widget",
   "repository": "https://github.com/oswin-jerome/verse-widget-win.git",
   "main": "Main.js",

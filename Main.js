@@ -48,7 +48,7 @@ app.on('ready', createWidget)
 
 let tray = null;
 app.whenReady().then(() => {
-    tray = new Tray('app.ico')
+    tray = new Tray(__dirname+'/app.ico')
     const contextMenu = Menu.buildFromTemplate([
         {
             label: 'Draggable', type: 'checkbox', click: () => {
@@ -75,5 +75,6 @@ app.whenReady().then(() => {
 });
 
 autoUpdater.on("update-downloaded",info=>{
+    console.log("update downloaded")
     autoUpdater.quitAndInstall();
 })

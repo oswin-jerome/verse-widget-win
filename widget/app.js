@@ -11,7 +11,7 @@ const fs = require('fs')
 // })
 
 // console.log()
-var data = fs.readFileSync('./data-eng.json')
+var data = fs.readFileSync(__dirname+'/..//data-eng.json')
 
 var mydata = JSON.parse(data);
 
