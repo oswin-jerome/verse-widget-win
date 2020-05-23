@@ -38,7 +38,7 @@ app.on('ready', createWidget)
 
 let tray = null;
 app.whenReady().then(() => {
-    tray = new Tray('icon.ico')
+    tray = new Tray('app.ico')
     const contextMenu = Menu.buildFromTemplate([
         {
             label: 'Draggable', type: 'checkbox', click: () => {
