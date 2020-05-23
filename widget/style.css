@@ -1,0 +1,21 @@
+body{
+    background-color: transparent;
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}
+
+.container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+
+    pointer-events: none;
+}
+
+#text{
+    pointer-events: none;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "verse-widget",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron --enable-transparent-visuals --disable-gpu ."
+  },
+  "author": "Oswin Jerome",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^9.0.0",
+    "electron-store": "^5.1.1",
+    "electron-window-state": "^5.0.3"
+  }
+}
