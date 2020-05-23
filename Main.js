@@ -1,6 +1,6 @@
 const { app, BrowserWindow, Tray, Menu } = require('electron')
 const Store = require('electron-store');
-
+const { autoUpdater } = require("electron-updater")
 const store = new Store();
 
 let win = null;
@@ -10,11 +10,13 @@ const createWidget = () => {
     win = new BrowserWindow({
         width:600,
         height:400,
+        skipTaskbar:true,
         x:d.x,
         y:d.y,
         frame: false,
         minimizable: false,
         transparent: true,
+        icon: __dirname + '/app.ico',
         webPreferences:{
 
             preload: __dirname + '/preload.js',
@@ -31,6 +33,14 @@ const createWidget = () => {
         win.x = d.x;
         win.y = d.y
     }
+
+
+    // Auto update
+    autoUpdater.autoDownload = true;
+    
+    autoUpdater.checkForUpdates().then((v)=>{
+        autoUpdater.downloadUpdate()
+    })
 }
 
 
@@ -56,7 +66,14 @@ app.whenReady().then(() => {
 
                 }
             }
-        },
+        },{
+            label:"exit",
+            click:()=>{app.quit()}
+        }
     ])
     tray.setContextMenu(contextMenu)
 });
+
+autoUpdater.on("update-downloaded",info=>{
+    autoUpdater.quitAndInstall();
+})

@@ -29,4 +29,4 @@ setInterval(()=>{
     var n = Math.round(Math.random() * verses.length);
 
     text.innerHTML = verses[n];
-},3000)
+},1000 * 60 * 5)

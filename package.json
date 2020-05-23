@@ -1,17 +1,37 @@
 {
   "name": "verse-widget",
-  "version": "1.0.0",
-  "description": "",
+  "version": "v1.0.1",
+  "description": "Verse widget",
+  "repository": "https://github.com/oswin-jerome/verse-widget-win.git",
   "main": "Main.js",
+  "build": {
+    "appId": "in.oswinjerome.verse_widget",
+    "mac": {
+      "category": "in.oswinjerome.verse_widget.type"
+    },
+    "win": {
+      "icon": "./app.ico",
+      "publish": [
+        "github"
+      ]
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron --enable-transparent-visuals --disable-gpu ."
+    "start": "electron --enable-transparent-visuals --disable-gpu .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "publish": "electron-builder --win -p always"
   },
   "author": "Oswin Jerome",
   "license": "ISC",
   "dependencies": {
-    "electron": "^9.0.0",
     "electron-store": "^5.1.1",
+    "electron-updater": "^4.3.1",
     "electron-window-state": "^5.0.3"
+  },
+  "devDependencies": {
+    "electron": "^9.0.0",
+    "electron-builder": "^22.6.1"
   }
 }
